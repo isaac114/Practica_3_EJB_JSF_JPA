@@ -1,13 +1,4 @@
 
 Practica_3_EJB_JSF_JPA/
-/.gitignore
-/.metadata/
-/.project
-/.settings/
-/faces-config.NavData
-/nanai
-/nb-configuration.xml
-/pom.xml
-/src/
-/target/
 /bin/
+/target/
