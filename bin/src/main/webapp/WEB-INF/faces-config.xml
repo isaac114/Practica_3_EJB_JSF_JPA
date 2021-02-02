@@ -19,10 +19,11 @@
     under the License.
 
 -->
-<faces-config version="2.3"
+<faces-config 
               xmlns="http://xmlns.jcp.org/xml/ns/javaee"
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_3.xsd">
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_3.xsd"
+              version="2.3">
     
     <application>
         <resource-handler>
@@ -31,7 +32,7 @@
     </application>
     
     <navigation-rule>
- 		<from-view-id>/index.xhtml</from-view-id>
+ 		<from-view-id>/inicio/*</from-view-id>
         <navigation-case>
             <from-outcome>inicio</from-outcome>
             <to-view-id>/index.xhtml</to-view-id>
@@ -41,6 +42,7 @@
             <from-outcome>login</from-outcome>
             <to-view-id>/public/login.xhtml</to-view-id>
         </navigation-case>
+        
         <navigation-case>
             <from-outcome>admin</from-outcome>
             <to-view-id>/admin/index.xhtml</to-view-id>
@@ -50,8 +52,8 @@
     
     
     <navigation-rule>
-        <from-view-id>/empleado/*</from-view-id>
         
+        <from-view-id>/empleado/index.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>home</from-outcome>
             <to-view-id>/index.xhtml</to-view-id>
