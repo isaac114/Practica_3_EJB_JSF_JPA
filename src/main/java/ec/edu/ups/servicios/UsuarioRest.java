@@ -42,6 +42,24 @@ public class UsuarioRest {
         return "Hola Mundo desde el path Productos";
     }
      */
+    @GET
+    @Path("/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response get(@PathParam("id") Integer id) {
+    	if(id != null) {
+    		Jsonb jsonb = JsonbBuilder.create();
+    		Usuario user = usuarioFacade.find(id);
+    		user.getApellido();
+    		if(user != null) {
+    			return Response.ok(jsonb.toJson(user)).header("Access-Control-Allow-Origin", "*").build();
+    		} else {
+    			return Response.status(Response.Status.NOT_FOUND).entity("Usuario no encontrado").build();
+    		}
+    	} else {
+    		return Response.status(Response.Status.NOT_FOUND).entity("Datos Insuficientes").build();
+    	}
+    }
+    
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
